@@ -21,8 +21,6 @@ SO THAT I can manage my time effectively
 
 ![Picture of the Day Planner](assets/images/screenshot.gif)
 
-(Note: the above is a mock-up and not necessarily representative of the finished application.)
-
 ### For More Details:
 
 Please check the repository's commit history and associated comments to see more information about this day planner webpage.
