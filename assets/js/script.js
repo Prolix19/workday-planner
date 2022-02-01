@@ -16,3 +16,32 @@
 // THEN the saved events persist
 
 // Code begins here:
+
+// Set up global variables
+var currentDay = $("#currentDay");
+var hourArray = [];
+var blockContainer = $(".container");
+var showDay = moment().format("dddd, MMMM Do YYYY");
+
+currentDay.text(showDay);
+
+// Make hours 9-5
+var createHours = function() {
+    for (var i = 0; i < 9; i++) {
+        var hour = moment().hour(i + 9).format("h a");
+        hourArray.push(hour);
+    };
+};
+
+// Apply classes to hour blocks so they will be color-coded by the CSS
+var colorHours = function() {
+    $.each(hourArray, function (i) {
+        if ( moment().isSame( moment().hour(9 + i) ) ) {
+            $("#text" + i).addClass("present");
+        } else if ( moment().isBefore( moment().hour(9 + i) ) ) {
+            $("text" + i).addClass("#future");
+        } else if ( moment().isAfter( moment().hour(9 + i) ) ) {
+            $("text" + i).addClass("past");
+        };
+    });
+};
